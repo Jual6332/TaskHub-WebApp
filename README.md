@@ -14,6 +14,6 @@ To track employee performance for companies with a large number of employees and
 
 3. From the Xampp Control Panel, Apache and MySQL must be running
  
-4. MySQL databases were managed from phpMyAdmin 
+4. MySQL databases are managed from phpMyAdmin 
 
 
