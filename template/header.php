@@ -105,6 +105,13 @@
                                     </label>
                                     <input type="email" required autocomplete="off" name="u_email"/>
                                   </div>
+
+                                  <div class="field-wrap">
+                                    <label>
+                                      Company Name<span class="req">*</span>
+                                    </label>
+                                    <input type="text" required autocomplete="off" name="u_company"/>
+                                  </div>
                                   
                                   <div class="field-wrap">
                                     <label>
@@ -115,11 +122,12 @@
                                   
                                   <button  name="sign_up" class="button button-block">Get Started</button>
                                   
-                                  </form>
+                                </form>
 
-								<?php 
-								include("user_insert.php");
-								?>
+
+                                <?php 
+                                include("user_insert.php");
+                                ?>
 
                                 </div>
                                 
@@ -148,9 +156,9 @@
                                   
                                   </form>
 
-                                  	<?php 
-									include("login.php");
-									?>
+                                    <?php 
+                                    include("login.php");
+                                    ?>
 
                                 </div>
                                 
