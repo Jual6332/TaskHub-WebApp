@@ -16,7 +16,7 @@ CREATE TABLE `CompletedTasks` (
 --
 
 /*!40000 ALTER TABLE `CompletedTasks` DISABLE KEYS */;
-INSERT INTO `CompletedTasks` VALUES (4,'Lucy Wilkinson','Sean Oneal','Set up trello',10,'2016-06-14'),(5,'Lucy Wilkinson','Sean Oneal','Project part 1',9,'2016-06-12'),(6,'Sean Oneal','Justn Alvey','Team meating',10,'2016-06-16'),(7,'Sean Oneal','Brandon Spitler','create database',8,'2016-06-16');
+INSERT INTO `CompletedTasks` VALUES (4,'Lucy Wilkinson','Sean Oneal','Set up trello',10,'2016-06-14'),(5,'Lucy Wilkinson','Sean Oneal','Project part 1',9,'2016-06-12'),(6,'Sean Oneal','Justin Alvey','Team meating',10,'2016-06-16'),(7,'Sean Oneal','Brandon Spitler','create database',8,'2016-06-16');
 /*!40000 ALTER TABLE `CompletedTasks` ENABLE KEYS */;
 --
 -- Table structure for table `InProgress`
