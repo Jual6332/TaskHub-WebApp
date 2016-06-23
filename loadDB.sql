@@ -66,10 +66,11 @@ CREATE TABLE `users` (
 ALTER TABLE `users` ADD PRIMARY KEY(`key`);
 ALTER TABLE `users` DROP PRIMARY KEY, ADD PRIMARY KEY(`id`);
 ALTER TABLE `users` CHANGE `id` `id` INT(2) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users` CHANGE `recieved` `received` TEXT CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` VALUES (1,NULL,'Sean ONeal','Lucy Wilkinson','Head Honcho','luwi8498','yaySchool!',NULL,'0',123),(2,'Lucy Wilkinson','Justin Alvey, Brandon Spitler','Sean ONeal','Hungry','seon7364','password','0','1,2,3',456),(3,'Sean ONeal',NULL,'Justin Alvey','Guy 1','jual6332','8674lion','1,2',NULL,789),(4,'Sean ONeal',NULL,'Brandon Spitler','Guy 2','brsp7274','guest','3',NULL,719);
+INSERT INTO `users` VALUES (1,NULL,'Sean ONeal','Lucy Wilkinson','Head Honcho','luwi8498@colorado.edu','yaySchool!',NULL,'0',123),(2,'Lucy Wilkinson','Justin Alvey, Brandon Spitler','Sean ONeal','Hungry','seon7364@colorado.edu','password','0','1,2,3',456),(3,'Sean ONeal',NULL,'Justin Alvey','Guy 1','jual6332@colorado.edu','8674lion','1,2',NULL,789),(4,'Sean ONeal',NULL,'Brandon Spitler','Guy 2','brsp7274@colorado.edu','guest','3',NULL,719);
