@@ -6,7 +6,7 @@
 		$email = mysqli_real_escape_string($con,$_POST['email']);
 		$pass = mysqli_real_escape_string($con,$_POST['pass']);
 		
-		$get_user = "select * from users where user_email='$email' AND user_pass='$pass'";
+		$get_user = "select * from users where username='$email' AND password='$pass'";
 		
 		$run_user = mysqli_query($con,$get_user);
 		
@@ -16,11 +16,12 @@
 		
 			$_SESSION['user_email']=$email;
 			
+			echo "<script>alert('Successful login!')</script>";
 			echo "<script>window.open('home.php','_self')</script>";
 		
 		}
 			else {
-			echo "<script>alert('Passowrd or email is not correct!')</script>";
+			echo "<script>alert('Password or email is not correct!')</script>";
 		}
 		
 		}
