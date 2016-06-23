@@ -10,20 +10,20 @@ if(!isset($_SESSION['user_email'])){
 else {
 
           $user = $_SESSION['user_email'];
-          $get_user = "select * from users where user_email='$user'";
+          $get_user = "select * from users where username='$user'";
           $run_user = mysqli_query($con,$get_user);
-      $row=mysqli_fetch_array($run_user);
+          $row=mysqli_fetch_array($run_user);
 
-      $user_id = $row['user_id'];
-      $user_name = $row['user_name'];
-      $user_email = $row['user_email'];
+          $user_id = $row['id'];
+          $user_name = $row['name'];
+          $user_email = $row['username'];
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>User Login | Dashboard</title>
+  <title>TaskHub | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
