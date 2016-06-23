@@ -1,17 +1,14 @@
 <?php 
 include("includes/connection.php");
 if(isset($_POST['sign_up'])){
+			$manager = "None";
+			$employees = "None";
 			$name = $_POST['u_name'];
-			$pass = $_POST['u_pass'];
+			$title = "None";
 			$email = $_POST['u_email'];
-			$country = "None";
-			$gender = "None";
-			$b_day = "None";
-			$date = date("d-m-y");
-			$status = "unverified";
-			$posts = "No";
+			$pass = $_POST['u_pass'];
 
-			$get_email = "select * from users where user_email='$email'";
+			$get_email = "select * from users where username='$email'";
 			$run_email = mysqli_query($con,$get_email);
 			$check = mysqli_num_rows($run_email);
 
@@ -24,7 +21,7 @@ if(isset($_POST['sign_up'])){
 				echo "<script>alert('Password must have a minimum of 8 characters.')</script>";
 				exit();
 			}else{
-				$insert = "insert into users (user_name,user_pass,user_email,user_country,user_gender,user_b_day,user_image,register_date,last_login,status,posts) values ('$name','$pass','$email','$country','$gender','$b_day','default.jpg','$date','$date','$status','$posts')";
+				$insert = "insert into users values ('$manager','$employees','$name','$title','$email','$pass',NULL,'$date','0','123')";
 
 				$run_insert = mysqli_query($con,$insert);
 
