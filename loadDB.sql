@@ -42,7 +42,7 @@ CREATE TABLE `InProgress` (
 --
 
 /*!40000 ALTER TABLE `InProgress` DISABLE KEYS */;
-INSERT INTO `InProgress` VALUES (0,'Lucy Wilkinson','Sean Oneal','Create USER-1 function',2,'2016-07-01','2016-06-10','Just started'),(1,'Sean Oneal','Justin Alvey','create USER-2 function',3,'2016-06-23','2016-06-11','Testing'),(2,'Sean Oneal','Justin Alvey','create USER-3 function',2,'2016-06-22','2016-06-12','Designing'),(3,'Sean Oneal','Brandon Spitler','create Func-01 fucntion',2,'2016-06-17','2016-06-11','Have not started'),(0,'Lucy Wilkinson','Sean Oneal','Create USER-1 function',2,'2016-07-01','2016-06-10','Just started'),(1,'Sean Oneal','Justin Alvey','create USER-2 function',3,'2016-06-23','2016-06-11','Testing'),(2,'Sean Oneal','Justin Alvey','create USER-3 function',2,'2016-06-22','2016-06-12','Designing'),(3,'Sean Oneal','Brandon Spitler','create Func-01 fucntion',2,'2016-06-17','2016-06-11','Have not started');
+INSERT INTO `InProgress` VALUES (0,'Lucy Wilkinson','Sean Oneal','Create USER-1 function',2,'2016-07-01','2016-06-10','Just started'),(1,'Sean Oneal','Justin Alvey','create USER-2 function',3,'2016-06-23','2016-06-11','Testing'),(2,'Sean Oneal','Justin Alvey','create USER-3 function',2,'2016-06-22','2016-06-12','Designing'),(3,'Sean Oneal','Brandon Spitler','create Func-01 fucntion',2,'2016-06-17','2016-06-11','Have not started');
 
 --
 -- Table structure for table `users`
