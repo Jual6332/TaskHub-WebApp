@@ -12,13 +12,35 @@ else {
           $user = $_SESSION['user_email'];
           $get_user = "select * from users where username='$user'";
           $run_user = mysqli_query($con,$get_user);
-          $row=mysqli_fetch_array($run_user);
+          $row = mysqli_fetch_array($run_user);
 
           $user_id = $row['id'];
           $user_name = $row['name'];
           $user_email = $row['username'];
+
+          $get_num = "select count(b.id) from users a, InProgress b where a.name = 'Justin Alvey' and a.name = b.workers";
+          $run_num = mysqli_query($con,$get_num);
+          if (!$run_num) {
+            printf("Error: %s\n", mysqli_error($con));
+            exit();
+          }
+          $num_retrieve = mysqli_fetch_array($run_num);
+          $numTasks = $num_retrieve['count(b.id)'];
+
+          $get_avg = "select AVG(grade) from CompletedTasks where workers = 'Justn Alvey'";
+          $run_avg = mysqli_query($con,$get_avg);
+          if (!$run_avg) {
+            printf("Error: %s\n", mysqli_error($con));
+            exit();
+          }
+          $avg_retrieve = mysqli_fetch_array($run_avg);
+          $avgTasks = round($avg_retrieve['AVG(grade)']);
+
 ?>
 <!DOCTYPE html>
+<!-- 
+          $num_retrieve = mysqli_fetch_array($run_num);
+          $numTasks = $num_retrieve['id'] -->
 <html>
 <head>
   <meta charset="utf-8">
@@ -298,9 +320,9 @@ else {
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>0 Tasks</h3>
+              <h3><?php echo "$numTasks";?> Tasks</h3>
 
-              <p>Review New Tasks</p>
+              <p>Review Active Tasks</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -313,7 +335,7 @@ else {
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>No Average<sup style="font-size: 20px"></sup></h3>
+              <h3><?php echo "$avgTasks";?> Average<sup style="font-size: 20px"></sup></h3>
 
               <p>Review Task History</p>
             </div>
