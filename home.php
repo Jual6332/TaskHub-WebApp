@@ -18,7 +18,7 @@ else {
           $user_name = $row['name'];
           $user_email = $row['username'];
 
-          $get_num = "select count(b.id) from users a, InProgress b where a.name = 'Justin Alvey' and a.name = b.workers";
+          $get_num = "select count(b.id) from users a, InProgress b where a.name = '$user_name' and a.name = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
             printf("Error: %s\n", mysqli_error($con));
@@ -27,7 +27,7 @@ else {
           $num_retrieve = mysqli_fetch_array($run_num);
           $numTasks = $num_retrieve['count(b.id)'];
 
-          $get_avg = "select AVG(grade) from CompletedTasks where workers = 'Justn Alvey'";
+          $get_avg = "select AVG(grade) from CompletedTasks where workers = '$user_name'";
           $run_avg = mysqli_query($con,$get_avg);
           if (!$run_avg) {
             printf("Error: %s\n", mysqli_error($con));
@@ -84,7 +84,7 @@ else {
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="home.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>THub</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -307,8 +307,7 @@ else {
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active"><i class="fa fa-dashboard"></i>    Dashboard</li>
       </ol>
     </section>
 
@@ -327,7 +326,7 @@ else {
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
           </div>
         </div>
         <!-- ./col -->
@@ -342,7 +341,7 @@ else {
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
           </div>
         </div>
         <!-- ./col -->
@@ -358,7 +357,7 @@ else {
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">To Do List</h3>
+              <h3 class="box-title">Active Task List</h3>
 
               <!--<div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -372,22 +371,50 @@ else {
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-            <!--
               <ul class="todo-list">
+            <?php 
+
+            if($numTasks == 0){
+
+            ?>
+
+
+
+            <?php } 
+            else{
+
+            ?>
                 <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                   <input type="checkbox" value="">
-                  <span class="text">Design a nice theme</span>
+                  <span class="text">Sign up for the Web Design 101 Seminar</span>
                   <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                  <div class="tools">
+                  <!--<div class="tools">
                     <i class="fa fa-edit"></i>
                     <i class="fa fa-trash-o"></i>
-                  </div>
+                  </div>-->
                 </li>
-              </ul>-->
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="">
+                  <span class="text">Design a nice theme for the Home page</span>
+
+                  <small class="label label-danger"><i class="fa fa-clock-o"></i> </small>
+                  <!--<div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>-->
+                </li>
+                <?php } 
+
+                ?>
+              </ul>
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
