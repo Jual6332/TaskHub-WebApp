@@ -348,6 +348,7 @@ else {
       </div>
       <!-- /.row -->
       <!-- Main row -->
+      <br>
       <div class="row">
         <!-- Left col -->
         <section class="col-lg-7 connectedSortable">
@@ -398,12 +399,18 @@ else {
                       </span>
                   <input type="checkbox" value="">
                   <span class="text"><?php echo"$taskD"?></span>
+                  <style type="text/css">padding-left: 0px</style>
                   <small class="label label-primary"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
                   <small class="label label-primary"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
                 </li>
 
                 <?php }
-                } 
+                } else{
+                ?>
+                  <h3>You have no active tasks.</h3>
+                <?php
+
+                }
 
                 ?>
               </ul>
