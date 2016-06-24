@@ -374,44 +374,36 @@ else {
               <ul class="todo-list">
             <?php 
 
-            if($numTasks == 0){
+            if($numTasks != 0){
 
-            ?>
+              $get_taskTable = "select * from InProgress where '$user_name' = workers";
+              $run_taskTable = mysqli_query($con,$get_taskTable);
+              if (!$run_taskTable) {
+                printf("Error: %s\n", mysqli_error($con));
+                exit();
+              }
+              $taskTable = mysqli_fetch_array($run_taskTable);
 
+              $taskD = $taskTable['description'];
+              $taskDiff = $taskTable['difficulty'];
+              $taskDate = $taskTable['due'];
 
+              for ($x = 1; $x <= $numTasks; $x++) {
+                $test = "The number is: $x <br>";?>
 
-            <?php } 
-            else{
-
-            ?>
-                <li>
+                 <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                   <input type="checkbox" value="">
-                  <span class="text">Sign up for the Web Design 101 Seminar</span>
-                  <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                  <!--<div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>-->
+                  <span class="text"><?php echo"$taskD"?></span>
+                  <small class="label label-primary"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
+                  <small class="label label-primary"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
                 </li>
-                <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                  <input type="checkbox" value="">
-                  <span class="text">Design a nice theme for the Home page</span>
 
-                  <small class="label label-danger"><i class="fa fa-clock-o"></i> </small>
-                  <!--<div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
-                  </div>-->
-                </li>
-                <?php } 
+                <?php }
+                } 
 
                 ?>
               </ul>
