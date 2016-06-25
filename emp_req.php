@@ -10,7 +10,6 @@ if(isset($_POST['enter_empkey'])){
 				
 	if($check==0){
 		echo "<script>alert('Employment key not found.')</script>";
-		exit();
 	}else{
 		$insert = "UPDATE `users` SET `emp_requests` = '$user_key' WHERE `users`.`key` = '$emp'";
 					
@@ -18,7 +17,6 @@ if(isset($_POST['enter_empkey'])){
 					
 		if($run_insert){
 			echo "<script>alert('Employment request sent!')</script>";
-			exit();
 		}else{
 			echo "<script>alert('Insert fail')</script>";
 		}
