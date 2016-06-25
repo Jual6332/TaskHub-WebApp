@@ -2,22 +2,18 @@
 session_start();
 include("includes/connection.php");
 include("functions/functions.php");
-
 if(!isset($_SESSION['user_email'])){
   
   header("location: index.php"); 
 }
 else {
-
           $user = $_SESSION['user_email'];
           $get_user = "select * from users where username='$user'";
           $run_user = mysqli_query($con,$get_user);
           $row = mysqli_fetch_array($run_user);
-
           $user_id = $row['id'];
           $user_name = $row['name'];
           $user_email = $row['username'];
-
           $get_num = "select count(b.id) from users a, InProgress b where a.name = '$user_name' and a.name = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
@@ -26,7 +22,6 @@ else {
           }
           $num_retrieve = mysqli_fetch_array($run_num);
           $numTasks = $num_retrieve['count(b.id)'];
-
           $get_avg = "select AVG(grade) from CompletedTasks where workers = '$user_name'";
           $run_avg = mysqli_query($con,$get_avg);
           if (!$run_avg) {
@@ -35,7 +30,6 @@ else {
           }
           $avg_retrieve = mysqli_fetch_array($run_avg);
           $avgTasks = round($avg_retrieve['AVG(grade)']);
-
 ?>
 <!DOCTYPE html>
 <!-- 
@@ -251,9 +245,8 @@ else {
       echo "
           <p>$user_name</p>
       ";
-
         ?>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
         </div>
       </div>
       <!-- search form -->
@@ -274,6 +267,11 @@ else {
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="active treeview">
+          <a href="network.php">
+            <i class="fa fa-dashboard"></i> <span>Network</span>
           </a>
         </li><!--
         <li>
@@ -374,23 +372,17 @@ else {
             <div class="box-body">
               <ul class="todo-list">
             <?php 
-
             if($numTasks != 0){
-
               $get_taskTable = "select * from InProgress where '$user_name' = workers";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
                 exit();
               }
-              $taskTable = mysqli_fetch_array($run_taskTable);
-
+              while ($taskTable = mysqli_fetch_array($run_taskTable)) {
               $taskD = $taskTable['description'];
               $taskDiff = $taskTable['difficulty'];
-              $taskDate = $taskTable['due'];
-
-              for ($x = 1; $x <= $numTasks; $x++) {
-                $test = "The number is: $x <br>";?>
+              $taskDate = $taskTable['due'];?>
 
                  <li>
                       <span class="handle">
@@ -403,15 +395,12 @@ else {
                   <small class="label label-primary"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
                   <small class="label label-primary"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
                 </li>
-
                 <?php }
                 } else{
                 ?>
                   <h3>You have no active tasks.</h3>
                 <?php
-
                 }
-
                 ?>
               </ul>
             </div>
@@ -421,7 +410,6 @@ else {
             </div>
           </div>
           <!-- /.box -->
-
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
@@ -430,7 +418,6 @@ else {
           <div class="box box-solid bg-green-gradient">
             <div class="box-header">
               <i class="fa fa-calendar"></i>
-
               <h3 class="box-title">Calendar</h3>
               <div class="pull-right box-tools">
                 <div class="btn-group">
@@ -463,7 +450,6 @@ else {
                   <div class="progress xs">
                     <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
                   </div>
-
                   <div class="clearfix">
                     <span class="pull-left">Task #2</span>
                     <small class="pull-right">70%</small>
@@ -480,7 +466,6 @@ else {
                   <div class="progress xs">
                     <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
                   </div>
-
                   <div class="clearfix">
                     <span class="pull-left">Task #4</span>
                     <small class="pull-right">40%</small>
@@ -492,12 +477,10 @@ else {
               </div>
             </div>
           </div>
-
         </section> -->
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
-
     </section>
     <!-- /.content -->
   </div>
@@ -511,7 +494,6 @@ else {
   </footer>
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery 2.2.0 -->
 <script src="plugins/jQuery/jQuery-2.2.0.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
