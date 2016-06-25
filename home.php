@@ -410,7 +410,7 @@ else {
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+              <button value="Add item" class="btn btn-default pull-right" name ="b_add_item"  onClick="document.location.href='addingTaskPopUp.php'"> Add Item</button>
             </div>
           </div>
           <!-- /.box -->
