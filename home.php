@@ -246,11 +246,7 @@ else {
           <p>$user_name</p>
       ";
         ?>
-<<<<<<< HEAD
           <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
-=======
-          <a href="#"><i class="fa fa-circle text-success"></i> </a>
->>>>>>> 4774eab4b86016e27544c8e9231f9624f95dc9c4
         </div>
       </div>
       <!-- search form -->
@@ -274,11 +270,7 @@ else {
           </a>
         </li>
         <li class="active treeview">
-<<<<<<< HEAD
           <a href="network.php">
-=======
-          <a href="/3308-project/network.php">
->>>>>>> 4774eab4b86016e27544c8e9231f9624f95dc9c4
             <i class="fa fa-dashboard"></i> <span>Network</span>
           </a>
         </li><!--
