@@ -253,7 +253,7 @@ else {
       ";
 
         ?>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          <a href="#"><i class="fa fa-circle text-success"></i> </a>
         </div>
       </div>
       <!-- search form -->
@@ -274,6 +274,11 @@ else {
         <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="active treeview">
+          <a href="/3308-project/network.php">
+            <i class="fa fa-dashboard"></i> <span>Network</span>
           </a>
         </li><!--
         <li>
