@@ -1,15 +1,13 @@
 <?php 
 include("includes/connection.php");
 if(isset($_POST['sign_up'])){
-			$manager = "None";
-			$employees = "None";
 			$name = $_POST['u_name'];
-			$title = "None";
 			$email = $_POST['u_email'];
 			$pass = $_POST['u_pass'];
 
 			$get_email = "select * from users where username='$email'";
 			$run_email = mysqli_query($con,$get_email);
+			
 			$check = mysqli_num_rows($run_email);
 
 			if($check==1){
@@ -21,7 +19,12 @@ if(isset($_POST['sign_up'])){
 				echo "<script>alert('Password must have a minimum of 8 characters.')</script>";
 				exit();
 			}else{
-				$insert = "insert into users values ('$manager','$employees','$name','$title','$email','$pass',NULL,'$date','0','123')";
+				$get_users = "select count(id) from users";
+				$run_users = mysqli_query($con,$get_users);
+				$fetch_users = mysqli_fetch_array($run_users);
+				$numUsers = $fetch_users['count(id)']+1;
+
+				$insert = "insert into users values ('$numUsers',NULL,NULL,'$name','None','$email','$pass',NULL,NULL,123,'None',NULL)";
 
 				$run_insert = mysqli_query($con,$insert);
 
