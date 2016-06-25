@@ -14,6 +14,10 @@ else {
           $user_id = $row['id'];
           $user_name = $row['name'];
           $user_email = $row['username'];
+          $user_key = $row['key'];
+          $requests = $row['emp_requests'];
+
+
           $get_num = "select count(b.id) from users a, InProgress b where a.name = '$user_name' and a.name = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
@@ -270,8 +274,8 @@ else {
           </a>
         </li>
         <li class="active treeview">
-          <a href="network.php">
-            <i class="fa fa-dashboard"></i> <span>Network</span>
+          <a href="test.php">
+            <i class="fa fa-cloud"></i> <span>Network</span>
           </a>
         </li><!--
         <li>
