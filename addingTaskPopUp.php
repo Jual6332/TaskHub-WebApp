@@ -3,8 +3,6 @@
 <body>
 
 <form action="" method="post">
-	Task Id#<br>
-	<input type "text" name="u_id"><br>
 	workers email<br>
 		<input type "text" name="u_worker1"><br>
 	Task Description<br>
@@ -27,14 +25,14 @@ if(isset($_POST['b_Submit_Task'])){
 	$check = mysqli_num_rows($run_email);
 	if($check==1){
 		
-		$taskId=$_POST['u_id'];
+
 		$difficulty=$_POST['u_difficulty'];
 		$manager=$row['manager'];
 		$description=$_POST['u_TaskDescription'];
 		$due = $_POST['u_dateDue'];
 		$assigned = "2016-08-12";
 		$progress = "Not started";
-		$insert="insert into `InProgress` (`id`, `manager`, `workers`, `description`, `difficulty`, `due`, `assigned`, `progress`) values ('$taskId','$manager','$name','$description','$difficulty','$due',now(),'Not stated')";
+		$insert="insert into `InProgress` (`manager`, `workers`, `description`, `difficulty`, `due`, `assigned`, `progress`) values ('$manager','$name','$description','$difficulty','$due',now(),'Not stated')";
 
 		$run_insert = mysqli_query($con,$insert);
 		if (false==$run_insert){
