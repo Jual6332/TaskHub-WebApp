@@ -38,6 +38,11 @@ else {
           <a href="/3308-project/network.php">
             <i class="fa fa-dashboard"></i> <span>Network</span>
           </a>
+        </li>
+        <li class="active treeview">
+          <a href="/3308-project/tasks_sent_dash.php">
+            <i class="fa fa-cloud"></i> <span>Manager</span>
+          </a>
         </li><!--
         <li>
           <a href="pages/calendar.html">
