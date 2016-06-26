@@ -1,4 +1,4 @@
-Enter file contents here<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
 
