@@ -52,7 +52,7 @@ INSERT INTO `CompletedTasks` (`id`, `manager`, `workers`, `description`, `grade`
 --
 
 CREATE TABLE `InProgress` (
-  `id` int(2) NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `manager` text NOT NULL,
   `workers` text NOT NULL,
   `description` text NOT NULL,
@@ -67,10 +67,10 @@ CREATE TABLE `InProgress` (
 --
 
 INSERT INTO `InProgress` (`id`, `manager`, `workers`, `description`, `difficulty`, `due`, `assigned`, `progress`) VALUES
-(0, 'Lucy Wilkinson', 'Sean Oneal', 'Create USER-1 function', 2, '2016-07-01', '2016-06-10', 'Just started'),
-(1, 'Sean Oneal', 'Justin Alvey', 'create USER-2 function', 3, '2016-06-23', '2016-06-11', 'Testing'),
-(2, 'Sean Oneal', 'Justin Alvey', 'create USER-3 function', 2, '2016-06-22', '2016-06-12', 'Designing'),
-(3, 'Sean Oneal', 'Brandon Spitler', 'create Func-01 fucntion', 2, '2016-06-17', '2016-06-11', 'Have not started');
+('Lucy Wilkinson', 'Sean Oneal', 'Create USER-1 function', 2, '2016-07-01', '2016-06-10', 'Just started'),
+('Sean Oneal', 'Justin Alvey', 'create USER-2 function', 3, '2016-06-23', '2016-06-11', 'Testing'),
+('Sean Oneal', 'Justin Alvey', 'create USER-3 function', 2, '2016-06-22', '2016-06-12', 'Designing'),
+('Sean Oneal', 'Brandon Spitler', 'create Func-01 fucntion', 2, '2016-06-17', '2016-06-11', 'Have not started');
 
 -- --------------------------------------------------------
 
