@@ -386,14 +386,18 @@ else {
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
               $taskD = $taskTable['description'];
               $taskDiff = $taskTable['difficulty'];
-              $taskDate = $taskTable['due'];?>
+              $taskDate = $taskTable['due'];
+              $taskId= $taskTable['id'];
+              ?>
+
 
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <input type="checkbox" value="">
+                 <button value="edit Task" onClick="document.location.href='editTask.php?q=<?php echo "$taskId"?>>'"> edit Task </button>
+
                   <span class="text"><?php echo"$taskD"?></span>
                   <style type="text/css">padding-left: 0px</style>
                   <small class="label label-primary"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
