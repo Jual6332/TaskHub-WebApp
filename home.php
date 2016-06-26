@@ -269,12 +269,12 @@ else {
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="#">
+          <a href="/3308-project/home.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="active treeview">
-          <a href="test.php">
+          <a href="/3308-project/network.php">
             <i class="fa fa-cloud"></i> <span>Network</span>
           </a>
         </li><!--
@@ -386,14 +386,18 @@ else {
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
               $taskD = $taskTable['description'];
               $taskDiff = $taskTable['difficulty'];
-              $taskDate = $taskTable['due'];?>
+              $taskDate = $taskTable['due'];
+              $taskId= $taskTable['id'];
+              ?>
+
 
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <input type="checkbox" value="">
+                 <button value="edit Task" onClick="document.location.href='editTask.php?q=<?php echo "$taskId"?>>'"> edit Task </button>
+
                   <span class="text"><?php echo"$taskD"?></span>
                   <style type="text/css">padding-left: 0px</style>
                   <small class="label label-primary"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
@@ -410,7 +414,7 @@ else {
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+              <button value="Add item" class="btn btn-default pull-right" name ="b_add_item"  onClick="document.location.href='addingTaskPopUp.php'"> Add Item</button>
             </div>
           </div>
           <!-- /.box -->
