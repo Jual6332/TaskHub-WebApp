@@ -16,8 +16,6 @@ else {
           $user_email = $row['username'];
           $user_key = $row['key'];
           $requests = $row['emp_requests'];
-
-
           $get_num = "select count(b.id) from users a, InProgress b where a.name = '$user_name' and a.name = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
@@ -280,7 +278,7 @@ else {
         </li>
         <li class="active treeview">
           <a href="tasks_sent_dash.php">
-            <i class="fa fa-cloud"></i> <span>Manager</span>
+            <i class="fa fa-user"></i> <span>Manager</span>
           </a>
         </li><!--
         <li>
@@ -423,12 +421,10 @@ else {
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-6 connectedSortable">
-
           <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
-
               <h3 class="box-title">Task History</h3>
             </div>
             <!-- /.box-header -->
@@ -446,7 +442,6 @@ else {
               $taskD = $taskTable['description'];
               $taskGrade = $taskTable['grade'];
               $taskDate = $taskTable['completed'];?>
-
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
