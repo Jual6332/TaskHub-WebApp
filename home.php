@@ -41,7 +41,7 @@ else {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TaskHub | Manager</title>
+  <title>TaskHub | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -308,7 +308,7 @@ else {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Manager
+        Dashboard
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
@@ -380,7 +380,7 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from InProgress where '$user_name' = manager";
+              $get_taskTable = "select * from InProgress where '$user_name' = workers";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
@@ -434,7 +434,7 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from CompletedTasks where '$user_name' = manager";
+              $get_taskTable = "select * from CompletedTasks where '$user_name' = workers";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
