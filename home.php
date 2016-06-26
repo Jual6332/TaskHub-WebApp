@@ -269,12 +269,12 @@ else {
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="#">
+          <a href="/3308-project/home.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="active treeview">
-          <a href="test.php">
+          <a href="/3308-project/network.php">
             <i class="fa fa-cloud"></i> <span>Network</span>
           </a>
         </li><!--
