@@ -35,6 +35,10 @@ if (isset($_POST['userCheck_req'])){
 		$insert_new_boss = mysqli_query($con,$insert_boss_req);
 		$addBoss_loop++;
 	}
+	
+	echo "<script>alert('Your network has been updated!')</script>";
+	echo "<META http-equiv='refresh' content='0;URL=/3308-project/network.php'>";
+
 }
 
 ?>
