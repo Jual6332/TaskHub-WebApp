@@ -269,12 +269,12 @@ else {
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="/3308-project/home.php">
+          <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="active treeview">
-          <a href="/3308-project/network.php">
+          <a href="network.php">
             <i class="fa fa-cloud"></i> <span>Network</span>
           </a>
         </li><!--
@@ -323,7 +323,7 @@ else {
             <div class="inner">
               <h3><?php echo "$numTasks";?> Tasks</h3>
 
-              <p>Review Active Tasks</p>
+              <p>Review Your Active Tasks</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
@@ -338,7 +338,7 @@ else {
             <div class="inner">
               <h3><?php echo "$avgTasks";?> Average<sup style="font-size: 20px"></sup></h3>
 
-              <p>Review Task History</p>
+              <p>Review Your Task History</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -353,7 +353,7 @@ else {
       <br>
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-7 connectedSortable">
+        <section class="col-lg-6 connectedSortable">
 
           <!-- TO DO List -->
           <div class="box box-primary">
@@ -386,22 +386,18 @@ else {
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
               $taskD = $taskTable['description'];
               $taskDiff = $taskTable['difficulty'];
-              $taskDate = $taskTable['due'];
-              $taskId= $taskTable['id'];
-              ?>
-
+              $taskDate = $taskTable['due'];?>
 
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                 <button value="edit Task" onClick="document.location.href='editTask.php?q=<?php echo "$taskId"?>>'"> edit Task </button>
-
+                  <input type="checkbox" value="">
                   <span class="text"><?php echo"$taskD"?></span>
                   <style type="text/css">padding-left: 0px</style>
-                  <small class="label label-primary"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
-                  <small class="label label-primary"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
+                  <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
+                  <small class="label label-danger"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
                 </li>
                 <?php }
                 } else{
@@ -414,15 +410,60 @@ else {
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button value="Add item" class="btn btn-default pull-right" name ="b_add_item"  onClick="document.location.href='addingTaskPopUp.php'"> Add Item</button>
+              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>  Send a Task to an Employee</button>
             </div>
           </div>
           <!-- /.box -->
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <!--<section class="col-lg-5 connectedSortable">-->
-          <!-- Calendar --><!--
+        <section class="col-lg-6 connectedSortable">
+
+          <!-- TO DO List -->
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-clipboard"></i>
+
+              <h3 class="box-title">Task History</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <ul class="todo-list">
+            <?php 
+            if($numTasks != 0){
+              $get_taskTable = "select * from CompletedTasks where '$user_name' = workers";
+              $run_taskTable = mysqli_query($con,$get_taskTable);
+              if (!$run_taskTable) {
+                printf("Error: %s\n", mysqli_error($con));
+                exit();
+              }
+              while ($taskTable = mysqli_fetch_array($run_taskTable)) {
+              $taskD = $taskTable['description'];
+              $taskGrade = $taskTable['grade'];
+              $taskDate = $taskTable['completed'];?>
+
+                 <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <span class="text"><?php echo"$taskD"?></span>
+                  <style type="text/css">padding-left: 0px</style>
+                  <small class="label label-default"><i class="fa fa-clock-o"></i>Completed:<?php echo"  $taskDate"?></small>
+                  <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
+                </li>
+                <?php }
+                } else{
+                ?>
+                  <h3>You have no completed tasks.</h3>
+                <?php
+                }
+                ?>
+              </ul>
+            </div>
+          </div>
+          <!-- Calendar -->
+          <!--
           <div class="box box-solid bg-green-gradient">
             <div class="box-header">
               <i class="fa fa-calendar"></i>
@@ -484,8 +525,8 @@ else {
                 </div>
               </div>
             </div>
-          </div>
-        </section> -->
+          </div>-->
+        </section> 
         <!-- right col -->
       </div>
       <!-- /.row (main row) -->
@@ -497,8 +538,7 @@ else {
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.1.1
     </div>
-    <strong>Copyright &copy; 2016 <a href="#">TaskHub</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2016 <a href="#">TaskHub</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
