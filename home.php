@@ -16,8 +16,6 @@ else {
           $user_email = $row['username'];
           $user_key = $row['key'];
           $requests = $row['emp_requests'];
-
-
           $get_num = "select count(b.id) from users a, InProgress b where a.name = '$user_name' and a.name = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
@@ -43,7 +41,7 @@ else {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TaskHub | Dashboard</title>
+  <title>TaskHub | Manager</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -269,7 +267,7 @@ else {
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="#">
+          <a href="home.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
@@ -279,8 +277,8 @@ else {
           </a>
         </li>
         <li class="active treeview">
-          <a href="/3308-project/tasks_sent_dash.php">
-            <i class="fa fa-cloud"></i> <span>Manager</span>
+          <a href="tasks_sent_dash.php">
+            <i class="fa fa-user"></i> <span>Manager</span>
           </a>
         </li><!--
         <li>
@@ -310,7 +308,7 @@ else {
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        Manager
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
@@ -382,7 +380,7 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from InProgress where '$user_name' = workers";
+              $get_taskTable = "select * from InProgress where '$user_name' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
@@ -423,12 +421,10 @@ else {
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
         <section class="col-lg-6 connectedSortable">
-
           <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
-
               <h3 class="box-title">Task History</h3>
             </div>
             <!-- /.box-header -->
@@ -436,7 +432,7 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from CompletedTasks where '$user_name' = workers";
+              $get_taskTable = "select * from CompletedTasks where '$user_name' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
@@ -446,7 +442,6 @@ else {
               $taskD = $taskTable['description'];
               $taskGrade = $taskTable['grade'];
               $taskDate = $taskTable['completed'];?>
-
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
