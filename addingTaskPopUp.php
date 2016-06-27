@@ -21,12 +21,30 @@
 include("includes/connection.php");
 session_start();
 $user=$_SESSION['user_email'];
-$get_userID = mysqli_query($con,"select id from users where username ='$user'");
+$get_userID = mysqli_query($con,"select * from users where username='$user'");
 $get_userID = mysqli_fetch_array($get_userID);
-$id = $get_userID['id'];
-$getEmployees = mysqli_query($con,"SELECT * FROM users where manager = '$id'");
+$user_emps = $get_userID['employees'];
+$emp_array = explode(',',$user_emps);
+
 echo "your current employees names and emails are";
-echo "<table border=1>
+echo "<div>";
+echo "<table border='1' style='width:25%'>";
+echo "<tr>";
+echo "<td><b>Employees</b></td>";
+echo "<td><b>Emails</b></td>";
+echo "</tr>";
+for($j=0;$j < count($emp_array);$j++){
+	$cur_emp_id = (int)$emp_array[$j];
+	$getEmployees = mysqli_query($con,"SELECT * FROM `users` WHERE `id` = '$cur_emp_id'");
+	$row6 = mysqli_fetch_array($getEmployees);
+	$user_full_name = $row6['name'];
+	$user_email = $row6['username'];
+	echo "<tr><td>$user_full_name</td>";
+	echo "<td>$user_email</td></tr>";
+}
+echo "</table>";
+echo "</div>";
+/*echo "<table border=1>
 	<tr>
 
 	<th> Employees Name</th>
@@ -38,7 +56,7 @@ while($record = mysqli_fetch_array($getEmployees)){
 	echo "<td>" . $record['username'] . "</td>";
 	echo "</tr>";
 }
-echo "</table>";
+echo "</table>";*/
 
 if(isset($_POST['b_Submit_Task'])){	
 	

@@ -121,8 +121,8 @@ else {
 		<div>
 			<table border="1" style="width:25%">
 				<tr>
-					<td>Employees</td>
-					<td>Employers</td>
+					<td><b>Employees</b></td>
+					<td><b>Employers</b></td>
 				</tr>
 				<?php
 				$emp_array = explode(',',$user_emps);
