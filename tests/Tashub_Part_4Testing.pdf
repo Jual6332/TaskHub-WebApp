@@ -7,6 +7,8 @@ Automated Tests: Our team chose to do one main automated test to make sure the f
 The reason that, as the descriptions below state, you need to use a preloaded databases, for the tests, is becasue of a random number generator made it hard to predict numbers for the test case; thus, we preloaded some test values as a get around to having
 to copy those numbers.
 
+Screen Shots: The screen shots display either an expected popup withen testing or the start and finish of testing pased on the label of the screen shot.
+
 Testing Tashub
   1. Download the last version of Firefox and Selenium
   2. Recreate an empty taskhub table. (probably wont matter but just in case you created the same users as me)
