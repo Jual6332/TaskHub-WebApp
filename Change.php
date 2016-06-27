@@ -1,10 +1,11 @@
 <?php
 	
 	//Connect to SQL
-	$username = "username";
-	$password = "password";
+	$username = "root";
+	$password = "";
     $host = "localhost";
-    $dbname = "databasename";
+    $dbname = "taskhub";
+
     
 try {
 	$conn = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password);
@@ -26,7 +27,7 @@ if (isset($_POST["ForgotPassword"])) {
 	}
 	
 	//Ensure user exists with this email
-	$query = $conn->prepare('SELECT email FROM users WHERE email = :email');
+	$query = (new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password))->prepare('SELECT user_email FROM users WHERE user_email = :email');
 	$query->bindParam(':email', $email);
 	$query->execute();
 	$userExists = $query->fetch(PDO::FETCH_ASSOC);

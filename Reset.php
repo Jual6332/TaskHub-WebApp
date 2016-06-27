@@ -1,10 +1,11 @@
 <?php
 	
 	// Connect to MySQL
-    $username = "username";
-    $password = "password";
+    $username = "root";
+    $password = "";
     $host = "localhost";
-    $dbname = "databasename";
+    $dbname = "taskhub";
+    
 
 try {
 	$conn = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password);
@@ -37,8 +38,8 @@ if (isset($_POST["ResetPasswordForm"])) {
             $password = hash('sha512', $salt.$password);
             
             // Update the user's password
-            $query = $conn->prepare('UPDATE users SET password = :password WHERE email = :email');
-			$query->bindParam(':password', $password);
+            $query = (new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password))->prepare('SELECT user_email FROM users WHERE user_email = :email');
+	    $query->bindParam(':password', $password);
             $query->bindParam(':email', $email);
             $query->execute();
             $conn = null;
