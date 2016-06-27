@@ -380,8 +380,14 @@ else {
             <div class="box-body">
               <ul class="todo-list">
             <?php 
-            if($numTasks != 0){
-              $get_taskTable = "select * from InProgress where '$user_name' = manager";
+            if(1 != 0){
+              $user=$_SESSION['user_email'];
+              $get_userID = mysqli_query($con,"select * from users where username ='$user'");
+              $get_userID = mysqli_fetch_array($get_userID);
+              $id = $get_userID['id'];
+
+
+              $get_taskTable = "select * from InProgress where '$id' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
@@ -414,7 +420,7 @@ else {
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>  Send a Task to an Employee</button>
+             <!--- <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>  Send a Task to an Employee</button>-->
             </div>
           </div>
           <!-- /.box -->
@@ -432,8 +438,13 @@ else {
             <div class="box-body">
               <ul class="todo-list">
             <?php 
-            if($numTasks != 0){
-              $get_taskTable = "select * from CompletedTasks where '$user_name' = manager";
+            if(1 != 0){
+              $user=$_SESSION['user_email'];
+              $get_userID = mysqli_query($con,"select * from users where username ='$user'");
+              $get_userID = mysqli_fetch_array($get_userID);
+              $id = $get_userID['id'];
+
+              $get_taskTable = "select * from CompletedTasks where '$id' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
