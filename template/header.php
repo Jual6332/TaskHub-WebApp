@@ -154,7 +154,7 @@
                                     ?>
                                     
 				<h2>Forgot Your Password?</h2>
-                                <form action="forgot.php" method="POST">
+                                <form action="Change.php" method="POST">
 				E-mail Address: <input type="text" name="email" /> <input type="submit" name="ForgotPassword" value=" Request Reset " />
 				</form>
                                 
