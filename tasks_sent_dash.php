@@ -332,7 +332,7 @@ else {
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
-            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
+            <a href="home.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -347,7 +347,7 @@ else {
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <!--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>-->
+            <a href="home.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -357,7 +357,7 @@ else {
       <br>
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-6 connectedSortable">
+        <section class="col-lg-5 connectedSortable">
 
           <!-- TO DO List -->
           <div class="box box-primary">
@@ -403,7 +403,7 @@ else {
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <input type="checkbox" value="">
+                 <!-- <input type="checkbox" value="">-->
                   <span class="text"><?php echo"$taskD"?></span>
                   <style type="text/css">padding-left: 0px</style>
                   <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
@@ -427,7 +427,7 @@ else {
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-6 connectedSortable">
+        <section class="col-lg-7 connectedSortable">
           <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
