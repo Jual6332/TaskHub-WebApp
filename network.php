@@ -27,12 +27,12 @@ else {
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="/3308-project/home.php">
+          <a href="home.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
         <li class="active treeview">
-          <a href="/3308-project/network.php">
+          <a href="network.php">
             <i class="fa fa-dashboard"></i> <span>Network</span>
           </a>
         </li>
@@ -122,7 +122,6 @@ else {
 			<table border="1" style="width:25%">
 				<tr>
 					<td><b>Employees</b></td>
-					<td><b>Employers</b></td>
 				</tr>
 				<?php
 				$emp_array = explode(',',$user_emps);
@@ -138,7 +137,7 @@ else {
 						$currEmpName = $row5['name'];
 						echo "<tr><td>$currEmpName</td>";
 					}else{
-						echo "<tr><td></td>";
+						echo "<tr>";
 					}
 					if($i<count($bos_array)){
 						$curBos = $bos_array[$i];
@@ -146,9 +145,8 @@ else {
 						$run_bos = mysqli_query($con,$get_bos);
 						$row5 = mysqli_fetch_array($run_bos);
 						$currBosName = $row5['name'];
-						echo "<td>$currBosName</td></tr>";
 					}else{
-						echo "<td></td></tr>";
+						;
 					}
 				}
 				?>
