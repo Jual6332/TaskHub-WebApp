@@ -215,14 +215,14 @@ else {
                 </p>-->
               </li>
               <!-- Menu Footer-->
-              <li class="user-footer">
+              <!--<li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Manager List</a>
                 </div>
                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
-              </li>
+              </li>-->
             </ul>
           </li>
           <!-- Control Sidebar Toggle Button -->
@@ -357,7 +357,7 @@ else {
       <br>
       <div class="row">
         <!-- Left col -->
-        <section class="col-lg-5 connectedSortable">
+        <section class="col-lg-4 connectedSortable">
 
           <!-- TO DO List -->
           <div class="box box-primary">
@@ -427,7 +427,7 @@ else {
         </section>
         <!-- /.Left col -->
         <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-7 connectedSortable">
+        <section class="col-lg-8 connectedSortable">
           <!-- TO DO List -->
           <div class="box box-primary">
             <div class="box-header">
@@ -455,7 +455,7 @@ else {
               $taskD = $taskTable['description'];
               $taskGrade = $taskTable['grade'];
               $taskDate = $taskTable['completed'];?>
-              <form action="" method="post">
+            
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
@@ -466,12 +466,13 @@ else {
                   <small class="label label-default"><i class="fa fa-clock-o"></i>Completed:<?php echo"  $taskDate"?></small>
                   <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
                   <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
-                  <input type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
+                  &nbsp; &nbsp;&nbsp; &nbsp;
+
+                  <input style = "float: right;" type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
                   <?php
                   include("change_grade.php");
                   ?>
-                  </form>
-                </li>
+                  </li>
                 <?php }
                 } else{
                 ?>
