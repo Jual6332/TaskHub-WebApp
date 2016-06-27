@@ -414,7 +414,6 @@ else {
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
-              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>  Send a Task to an Employee</button>
             </div>
           </div>
           <!-- /.box -->
