@@ -61,8 +61,8 @@ Description: <?php echo $description?><br>
 Difficulty: <?php echo $taskInfo['difficulty']?><br>
 Assigned: <?php echo $taskInfo['assigned']?><br>
 Due: <?php echo $taskInfo['due']?><br>
-Days tell due: <?php $datediff=strtotime($taskInfo['due'])-time(); echo floor($datediff /(60*60*24));?><br>
-progress:
+Days Until Due: <?php $datediff=strtotime($taskInfo['due'])-time(); echo floor($datediff /(60*60*24));?><br>
+Progress:
 
 <input type text size="60" value='<?php echo $taskInfo['progress'] ?>' name="u_progress"><br>
 <input type="Submit" value = "Submit Changes" name = "b_submitChanges">
