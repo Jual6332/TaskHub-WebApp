@@ -432,8 +432,13 @@ else {
             <div class="box-body">
               <ul class="todo-list">
             <?php 
-            if($numTasks != 0){
-              $get_taskTable = "select * from CompletedTasks where '$user_name' = manager";
+            if(1 != 0){
+               $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
+                $getManagerId=mysqli_fetch_array($getManagerId);
+                 $get_taskTable = "select * from InProgress where '$ManagerId' = manager";
+
+                $ManagerId=$getManagerId['id'];
+
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
