@@ -3,7 +3,7 @@
 ###Project Team: Justin Alvey, Sean O'Neal, Brandon Spitler, and Lucy Wilkinson
 ### Project Description:
 A social media-type system for work that allows managers to send task requests to employees. keep track of employee performance based on task history
-### Vision Statment:
+### Vision Statement:
 A centralized system that comprehensively tracks employee performance through task completion history
 ### Motivation: 
 To track employee performance for companies with a large number of employees and optimizing task-tracking in the workplace
@@ -75,13 +75,13 @@ This repo includes a lot of code, and many different avenues are taken to create
       22. **editTask.php** - from the "Dashboard" page, an employee may edit the task he or she is working on to reflect their progress. By clicking the edit task button on one of their tasks, a separate html page loads, and allows the user to update the progress so far, or mark the task as done. Done tasks are then sent to the CompletedTasks table in the database, and loaded in their manager's task history to grade.
       23. **change_grade.php** -  from the "Manager" tab, a manager can grade the work of their employees. This function gets called in this instance, and updates the task in CompletedTasks to reflect the new grade.
 
-###testing taskhub
+### Testing Taskhub
       1. Download the last version of Firefox and Selenium
       2. Recreate an empty taskhub table. (probably wont matter but just in case you created the same users as me)
-      3.using "loadDB2.sql" copy into the tables then run the testing script clicking okay on the pop up windows
+      3. Using "loadDB2.sql" copy into the tables then run the testing script clicking okay on the pop up windows
       4. using one of the following selenium source files go to edit new test case and copy and paste that source into the source tab or export one of the files as a test Case
-            a. test_login.selenium signs up a new user and logs him in
-            b. test_everything.selenium loogs 3 users in making two of them the manager of one then one of the managers assines tasks to the employee; that employee then edits the tasks progress then completes task; finally it sings back into the manager to give that employee a grade for that task.
-            c.test_signup.selenium signs user 3 in
-      4. run thos scripts using Selenium and Firefox and play current test 
-      5. press okay to the pop up alerts
+            a. Test_login.selenium signs up a new user and logs him in
+            b. Test_everything.selenium logs 3 users in making two of them the manager of one then one of the managers assigns tasks to the employee; that employee then edits the tasks progress, then completes task; finally it swings back into the manager to give that employee a grade for that task.
+            c. Test_signup.selenium signs user 3 in
+      4. Run those scripts using Selenium and Firefox and play current test 
+      5. Press okay to the pop up alerts
