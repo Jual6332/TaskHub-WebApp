@@ -364,7 +364,7 @@ else {
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Active Sent Tasks</h3>
+              <h3 class="box-title">Active Task List</h3>
 
               <!--<div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -381,28 +381,25 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
-              $getManagerId=mysqli_fetch_array($getManagerId);
-              $ManagerId=$getManagerId['id'];
-              $get_taskTable = "select * from InProgress where '$ManagerId' = manager";
+              $get_taskTable = "select * from InProgress where '$user_name' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
-                    $taskee = $taskTable['workers'];
-                    $taskD = $taskTable['description'];
-                    $taskDiff = $taskTable['difficulty'];
-                    $taskDate = $taskTable['due'];?>
+              $taskD = $taskTable['description'];
+              $taskDiff = $taskTable['difficulty'];
+              $taskDate = $taskTable['due'];?>
 
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <span class="text"><?php echo"<strong>$taskee:</strong>"?></span>
+                  <input type="checkbox" value="">
                   <span class="text"><?php echo"$taskD"?></span>
+                  <style type="text/css">padding-left: 0px</style>
                   <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
                   <small class="label label-danger"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
                 </li>
@@ -417,6 +414,7 @@ else {
             </div>
             <!-- /.box-body -->
             <div class="box-footer clearfix no-border">
+              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i>  Send a Task to an Employee</button>
             </div>
           </div>
           <!-- /.box -->
@@ -428,45 +426,35 @@ else {
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
-              <h3 class="box-title">Sent Task History</h3>
+              <h3 class="box-title">Task History</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="todo-list">
             <?php 
-            if(1 != 0){
-                $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
-                $getManagerId=mysqli_fetch_array($getManagerId);
-                $ManagerId=$getManagerId['id'];
-                $get_taskTable = "select * from CompletedTasks where '$ManagerId' = manager";
-
-
+            if($numTasks != 0){
+              $get_taskTable = "select * from CompletedTasks where '$user_name' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
-                  $taskee = $taskTable['workers'];
-                  $taskID = $taskTable['id'];
-                  $taskD = $taskTable['description'];
-                  $taskGrade = $taskTable['grade'];
-                  $taskDate = $taskTable['completed'];?>
+                $taskID = $taskTable['id'];
+              $taskD = $taskTable['description'];
+              $taskGrade = $taskTable['grade'];
+              $taskDate = $taskTable['completed'];?>
+              <form action="" method="post">
                  <li>
-                 <form action="" method="post">
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <span class="text"><?php echo"<strong>$taskee:</strong>"?></span>
                   <span class="text"><?php echo"$taskD"?></span>
+                  <style type="text/css">padding-left: 0px</style>
+                  <small class="label label-default"><i class="fa fa-clock-o"></i>Completed:<?php echo"  $taskDate"?></small>
                   <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
                   <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  &nbsp;&nbsp;&nbsp;&nbsp;
                   <input type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
                   <?php
                   include("change_grade.php");
