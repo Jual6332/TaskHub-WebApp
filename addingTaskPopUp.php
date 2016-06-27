@@ -68,7 +68,7 @@ if(isset($_POST['b_Submit_Task'])){
 		if($test==1){
 		
 			$difficulty=$_POST['u_difficulty'];
-			$manager=$row['manager'];
+			$manager=$id;
 			$description=$_POST['u_TaskDescription'];
 			$due = $_POST['u_dateDue'];
 			$assigned = "2016-08-12";
