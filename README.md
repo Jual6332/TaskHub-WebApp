@@ -16,7 +16,7 @@ To track employee performance for companies with a large number of employees and
 + From the Xampp Control Panel, Apache and MySQL must be running
 + MySQL databases are managed from phpMyAdmin
 
-### Deployment Environment Setup and Testing- Windows
+### Deployment Environment Setup and Testing - Windows
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Now that we have Xampp, open up the Xampp control panel (this might be located in your downloads, or you can search in your programs list)
 + From the Xampp Control Panel, make sure the Apache and MySQL modules are running by clicking the "Start" button under Actions for each. If the buttons immediately under Actions say "Stop", then they are already running and you don't have to change anything else
@@ -47,7 +47,7 @@ This repo includes a lot of code, and many different avenues are taken to create
       5. Part 4C: **TaskHub_Part_4Finish.pdf** provides an overview, and "looking back" view of our project to see what was contributed, what worked with our software process (Trello, GitHub, developing source, etc.) and what product we were able to create as a final product (Demo Video.)
       6. Part 5: **TBD**
       7. Part 6: **Not included - individual peer evals**
-      8. Other: project1.sql was a testing of our mysql database setup using queries
+      8. Other: **project1.sql was a testing of our mysql database setup using queries**
       
 + ####**TaskHub Full Source**
       1. **index.php** - loads in the connection.php file from its directory (/includes), header.php, and eventually login.php
