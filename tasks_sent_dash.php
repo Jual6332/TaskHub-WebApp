@@ -412,7 +412,7 @@ else {
                 <?php }
                 } else{
                 ?>
-                  <h3>You have no active tasks.</h3>
+                  <h3>You have no active sent tasks.</h3>
                 <?php
                 }
                 ?>
@@ -437,6 +437,8 @@ else {
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="todo-list">
+
+                <form action="" method="post">
             <?php 
             if(1 != 0){
               $user=$_SESSION['user_email'];
@@ -455,7 +457,7 @@ else {
               $taskD = $taskTable['description'];
               $taskGrade = $taskTable['grade'];
               $taskDate = $taskTable['completed'];?>
-            
+                
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
@@ -468,85 +470,23 @@ else {
                   <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
                   &nbsp; &nbsp;&nbsp; &nbsp;
 
-                  <input style = "float: right;" type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
+                  <input style = "float: right;" type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"/>
+                  </li>
+                  </form>
                   <?php
                   include("change_grade.php");
                   ?>
-                  </li>
                 <?php }
                 } else{
                 ?>
-                  <h3>You have no completed tasks.</h3>
+                  <h3>You have no sent tasks.</h3>
                 <?php
                 }
                 ?>
+
               </ul>
             </div>
           </div>
-          <!-- Calendar -->
-          <!--
-          <div class="box box-solid bg-green-gradient">
-            <div class="box-header">
-              <i class="fa fa-calendar"></i>
-              <h3 class="box-title">Calendar</h3>
-              <div class="pull-right box-tools">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-bars"></i></button>
-                  <ul class="dropdown-menu pull-right" role="menu">
-                    <li><a href="#">Add new event</a></li>
-                    <li><a href="#">Clear events</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">View calendar</a></li>
-                  </ul>
-                </div>
-                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
-                </button>
-              </div>
-            </div>
-            <div class="box-body no-padding">
-              <div id="calendar" style="width: 100%"></div>
-            </div>
-            <div class="box-footer text-black">
-              <div class="row">
-                <div class="col-sm-6">
-                  Progress bars
-                  <div class="clearfix">
-                    <span class="pull-left">Task #1</span>
-                    <small class="pull-right">90%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                  </div>
-                  <div class="clearfix">
-                    <span class="pull-left">Task #2</span>
-                    <small class="pull-right">70%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="clearfix">
-                    <span class="pull-left">Task #3</span>
-                    <small class="pull-right">60%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                  </div>
-                  <div class="clearfix">
-                    <span class="pull-left">Task #4</span>
-                    <small class="pull-right">40%</small>
-                  </div>
-                  <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>-->
         </section> 
         <!-- right col -->
       </div>
