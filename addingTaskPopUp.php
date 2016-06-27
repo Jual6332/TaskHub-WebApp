@@ -59,7 +59,7 @@ if(isset($_POST['b_Submit_Task'])){
 			$due = $_POST['u_dateDue'];
 			$assigned = "2016-08-12";
 			$progress = "Not started";
-			$insert="insert into `InProgress` (`manager`, `workers`, `description`, `difficulty`, `due`, `assigned`, `progress`) values ('$manager','$name','$description','$difficulty','$due',now(),'Not stated')";
+			$insert="insert into `InProgress` (`manager`, `workers`, `description`, `difficulty`, `due`, `assigned`, `progress`) values ('$manager','$name','$description','$difficulty','$due',now(),'Not started')";
 
 			$run_insert = mysqli_query($con,$insert);
 			if (false==$run_insert){
