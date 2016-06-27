@@ -12,7 +12,7 @@
 		<input type "text" name="u_difficulty"><br>
 	Due Date<br>
 		<input type="date" name="u_dateDue"><br>
-	<input type="Submit" value="Sumbit Task"  name="b_Submit_Task">
+	<input type="Submit" value="Submit Task"  name="b_Submit_Task">
 	<br>
 	<br>		
 </form>
@@ -27,7 +27,7 @@ $id = $get_userID['id'];
 
 $employees=explode(",",$get_userID['employees']);
 
-echo "your current employees names and emails are";
+echo "Your current employees' names and emails are";
 echo "<table border=1>
 	<tr>
 
@@ -86,10 +86,10 @@ if(isset($_POST['b_Submit_Task'])){
 			}
 		
 		}else{
-			printf("please enter one of YOUR workers emails");
+			printf("Please enter one of YOUR workers emails");
 		}
 	}else{
-		printf("error users email is not in the system please insert a email of a worker signed up for taskHub");
+		printf("Error: User's email is not in the system. Please insert a email of a worker signed up for taskHub");
 	}
 }
 
