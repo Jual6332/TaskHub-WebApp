@@ -46,7 +46,7 @@ if(isset($_POST['b_taskComplete'])){
 	$insert="INSERT INTO `CompletedTasks` (`id`, `manager`, `workers`, `description`,`grade`,`completed`) VALUES('$taskId','$manager','$id','$description','Not given yet',now())";
 
 	$runInsert=mysqli_query($con,$insert);
-	$delete="DELETE FROM `InProgress` WHERE id='$taskId' AND workers='$id'";
+	$delete="DELETE FROM `InProgress` WHERE id='$taskId'";
 	$runDelete=mysqli_query($con,$delete);
 	echo "<script>window.open('home.php','_self')</script>";	
 
