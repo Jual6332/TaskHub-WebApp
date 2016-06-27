@@ -153,6 +153,10 @@
                                     include("login.php");
                                     ?>
 
+                                <form action="forgot.php" method="POST">
+									E-mail Address: <input type="text" name="email" /> <input type="submit" name="ForgotPassword" value=" Request Reset " />
+								</form>
+                                
                                 </div>
                                 
                               </div><!-- tab-content -->
