@@ -364,7 +364,7 @@ else {
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Active Task List</h3>
+              <h3 class="box-title">Active Sent Tasks</h3>
 
               <!--<div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -391,17 +391,18 @@ else {
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
-              $taskD = $taskTable['description'];
-              $taskDiff = $taskTable['difficulty'];
-              $taskDate = $taskTable['due'];?>
+                    $taskee = $taskTable['workers'];
+                    $taskD = $taskTable['description'];
+                    $taskDiff = $taskTable['difficulty'];
+                    $taskDate = $taskTable['due'];?>
 
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
+                  <span class="text"><?php echo"<strong>$taskee:</strong>"?></span>
                   <span class="text"><?php echo"$taskD"?></span>
-                  <style type="text/css">padding-left: 0px</style>
                   <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
                   <small class="label label-danger"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
                 </li>
@@ -427,7 +428,7 @@ else {
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
-              <h3 class="box-title">Task History</h3>
+              <h3 class="box-title">Sent Task History</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -446,22 +447,27 @@ else {
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
+                  $taskee = $taskTable['workers'];
                   $taskID = $taskTable['id'];
                   $taskD = $taskTable['description'];
                   $taskGrade = $taskTable['grade'];
                   $taskDate = $taskTable['completed'];?>
-              <form action="" method="post">
                  <li>
+                 <form action="" method="post">
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
+                  <span class="text"><?php echo"<strong>$taskee:</strong>"?></span>
                   <span class="text"><?php echo"$taskD"?></span>
-                  <style type="text/css">padding-left: 0px</style>
-                  <small class="label label-default"><i class="fa fa-clock-o"></i>Completed:<?php echo"  $taskDate"?></small>
                   <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
                   <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
-                  <input href="tasks_sent_dash.php" type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
                   <?php
                   include("change_grade.php");
                   ?>
