@@ -434,7 +434,7 @@ else {
             if(1 != 0){
                $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
                 $getManagerId=mysqli_fetch_array($getManagerId);
-                 $get_taskTable = "select * from InProgress where '$ManagerId' = manager";
+                 $get_taskTable = "select * from InProgress where '$user_name' = manager";
 
                 $ManagerId=$getManagerId['id'];
 
