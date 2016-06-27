@@ -45,7 +45,8 @@ if (isset($_POST["ForgotPassword"])) {
 		
 		//Mail reset link
 		$mailbody = "Dear user,\n\nIt appears that you have requested a password reset at TaskHub\n\nTo reset your password, please click the link below. If you cannot click it, please paste it into your web browser's address bar.\n\n" . $pwrurl . "\n\nThanks,\nThe Administration";
-		mail($userExists["username"], "TaskHub Password Reset", $mailbody);
+		$headers = 'From: webmaster@taskhub.com' . "\r\n" .
+		mail($userExists["username"], "TaskHub Password Reset", $mailbody, $headers);
 		echo "Your password recovery key has been sent to your email address.";
 	}
 	else {
