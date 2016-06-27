@@ -15,7 +15,7 @@ To track employee performance for companies with a large number of employees and
 + TaskHub is also equipped with Windows and Mac compatability (see the Compatability section)
 
 ### Deployment Environment Setup - Windows
-+ The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html or follow this tutorial "ApacheFriends.org") and download Xampp  [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
++ The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Now that we have Xampp, open up the Xampp control panel (this might be located in your downloads, or you can search in your programs list)
 + From the Xampp Control Panel, make sure the Apache and MySQL modules are running by clicking the "Start" button under Actions for each. If the buttons immediatly under Actions say "Stop" then they are already running and you don;t have to change anything else
 + Let's setup the database for the site. Open a web browser, and type in localhost/phpmyadmin/. This will navigate you to the phpmyadmin setup included with Xampp, with which you can manage your database effectively
