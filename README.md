@@ -35,3 +35,17 @@ To track employee performance for companies with a large number of employees and
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Xampp can be installed by following the short list of steps at this [FAQ page](https://www.apachefriends.org/faq_osx.html "https://www.apachefriends.org/faq_osx.html") by clicking "How do I do install XAMPP for Mac OS X?" and following the steps.
 
+### Repo Code Layout
+This repo includes a lot of code, and many different avenues are taken to create the TaskHub software what it is. Included are CSS style pages, custom Javascript code for site functionality, Bootstrap framework packages included to create sleek design, and sql queries which are used to manage databases. But the code can be broken down further. Here is a comprehensive breakdown of all code and files used in TaskHub.
+
++ **CSCI 3308 Required Project Files**
+  + Included are many files required for our class
+      1. Part 1: **ProjectPart1.pdf**
+          provides a "look-ahead" approach to our project, including our project-tracking software (Trello), VCS (GitHub), and our project description.
+      2. Part 2: **03-TaskHub_Part2.sql** is a MySQL dump of our first database tables. Provided a visual interpretation of how our database would function, and using phpMyAdmin, was detrimental in providing function for our project
+      3.  Part 4A: **TaskHub_Part_4Testing.pdf** is a breakdown of the method by which we tested our code. Using automated test cases, we were able to find which areas of our backend needed improvement, by testing user functions such as signing in, updating a task, and others.
+      4. Part 4B: **TaskHub_Part_4Autodoc.pdf** is an autodocumentation of our code, by which other users and programmers can experience our thought process, and witness the method involved. We hope by making our code open-source and free, we can help other programmers and thinkers solve problems at even the smallest scale of programming.
+      5. Part 4C: **TaskHub_Part_4Finish.pdf** provides an overview, and "looking back" view of our project to see what was contributed, what worked with our software process (Trello, GitHub, developing source, etc.) and what product we were able to create as a final product (Demo Video.)
+      6. Part 5: TBD
+      7. Part 6: Not include - individual peer evals
+
