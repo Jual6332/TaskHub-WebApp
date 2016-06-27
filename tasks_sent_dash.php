@@ -364,7 +364,7 @@ else {
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Active Sent Tasks</h3>
+              <h3 class="box-title">Active Task List</h3>
 
               <!--<div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -381,7 +381,10 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from InProgress where '$user_name' = manager";
+              $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
+              $getManagerId=mysqli_fetch_array($getManagerId);
+              $ManagerId=$getManagerId['id'];
+              $get_taskTable = "select * from InProgress where '$ManagerId' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
@@ -397,7 +400,6 @@ else {
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <input type="checkbox" value="">
                   <span class="text"><?php echo"$taskD"?></span>
                   <style type="text/css">padding-left: 0px</style>
                   <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
@@ -425,18 +427,18 @@ else {
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
-              <h3 class="box-title">Completed Sent Tasks</h3>
+              <h3 class="box-title">Task History</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="todo-list">
             <?php 
             if(1 != 0){
-               $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
+                $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
                 $getManagerId=mysqli_fetch_array($getManagerId);
-                 $get_taskTable = "select * from CompletedTasks where 'Sean Oneal' = manager";
-
                 $ManagerId=$getManagerId['id'];
+                $get_taskTable = "select * from CompletedTasks where '$ManagerId' = manager";
+
 
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
@@ -444,10 +446,10 @@ else {
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
-                $taskID = $taskTable['id'];
-              $taskD = $taskTable['description'];
-              $taskGrade = $taskTable['grade'];
-              $taskDate = $taskTable['completed'];?>
+                  $taskID = $taskTable['id'];
+                  $taskD = $taskTable['description'];
+                  $taskGrade = $taskTable['grade'];
+                  $taskDate = $taskTable['completed'];?>
               <form action="" method="post">
                  <li>
                       <span class="handle">
@@ -459,7 +461,7 @@ else {
                   <small class="label label-default"><i class="fa fa-clock-o"></i>Completed:<?php echo"  $taskDate"?></small>
                   <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
                   <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
-                  <input type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
+                  <input href="tasks_sent_dash.php" type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
                   <?php
                   include("change_grade.php");
                   ?>
