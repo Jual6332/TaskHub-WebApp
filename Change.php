@@ -27,25 +27,25 @@ if (isset($_POST["ForgotPassword"])) {
 	}
 	
 	//Ensure user exists with this email
-	$query = (new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password))->prepare('SELECT user_email FROM users WHERE user_email = :email');
+	$query = (new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password))->prepare('SELECT username FROM users WHERE username = :email');
 	$query->bindParam(':email', $email);
 	$query->execute();
 	$userExists = $query->fetch(PDO::FETCH_ASSOC);
 	$conn = null;
 	
-	if ($userExists["email"]) {
+	if ($userExists["username"]) {
 		//Create a unique salt. This will never leave PHP unencrypted.
 		$salt =  "498#2D83B631%3800EBD!801600D*7E3CC13";
 		
 		//Create password reset key
-		$password = hash('sha512', $salt.$userExists["email"]);
+		$password = hash('sha512', $salt.$userExists["username"]);
 		
 		//Create URL to reset passwork
-		$pwurl = "http://localhost/project/reset_password.php?q=".$password;
+		$pwrurl = "http://localhost/project/reset_password.php?q=".$password;
 		
 		//Mail reset link
 		$mailbody = "Dear user,\n\nIt appears that you have requested a password reset at TaskHub\n\nTo reset your password, please click the link below. If you cannot click it, please paste it into your web browser's address bar.\n\n" . $pwrurl . "\n\nThanks,\nThe Administration";
-		mail($userExists["email"], "TaskHub Password Reset", $mailbody);
+		mail($userExists["username"], "TaskHub Password Reset", $mailbody);
 		echo "Your password recovery key has been sent to your email address.";
 	}
 	else {
