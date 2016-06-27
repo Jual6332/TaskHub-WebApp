@@ -74,6 +74,7 @@ else {
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <script src="editGrade.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -439,9 +440,11 @@ else {
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
+                $taskID = $taskTable['id'];
               $taskD = $taskTable['description'];
               $taskGrade = $taskTable['grade'];
               $taskDate = $taskTable['completed'];?>
+              <form action="" method="post">
                  <li>
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
@@ -451,6 +454,12 @@ else {
                   <style type="text/css">padding-left: 0px</style>
                   <small class="label label-default"><i class="fa fa-clock-o"></i>Completed:<?php echo"  $taskDate"?></small>
                   <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
+                  <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
+                  <input type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"; ?>
+                  <?php
+                  include("change_grade.php");
+                  ?>
+                  </form>
                 </li>
                 <?php }
                 } else{
