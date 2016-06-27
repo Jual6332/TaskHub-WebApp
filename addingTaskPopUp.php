@@ -57,9 +57,15 @@ if(isset($_POST['b_Submit_Task'])){
 	$name=$row['name'];
 	$check = mysqli_num_rows($run_email);
 	if($check==1){
-	
+		$test=0;
+		$employees = explode(",",$row['manager']);
+		foreach($employees as $employId){
+			if($id==$employId){
+				$test=1;
+			}
+		}	
 		
-		if($id==$row['manager']){
+		if($test==1){
 		
 			$difficulty=$_POST['u_difficulty'];
 			$manager=$row['manager'];
