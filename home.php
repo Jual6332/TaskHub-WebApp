@@ -398,7 +398,7 @@ else {
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
-                  <button value="edit Task" onClick="document.location.href='editTask.php?q=<?php echo "$taskId"?>>'"> edit Task </button> 
+                  <button value="edit Task" onClick="document.location.href='editTask.php?q=<?php echo "$taskId"?>'"> edit Task </button> 
                   <span class="text"><?php echo"$taskD"?></span>
                   <style type="text/css">padding-left: 0px</style>
                   <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
