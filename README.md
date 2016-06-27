@@ -12,7 +12,9 @@ To track employee performance for companies with a large number of employees and
 + TaskHub is run locally for now, but TaskHub.site will be coming soon! Make sure to be watching.
 + TaskHub utilizes the popular LAMP stack: Linux, Apache, MySQL, and PHP for software development
 + XAMPP was used to develop TaskHub, and is a free and open source cross-platform web server solution stack package developed by Apache Friends (they are super awesome and you should check them out)
-+ TaskHub is also equipped with Windows and Mac compatability (see the Compatability section)
++ TaskHub is also equipped to run on Windows and Mac OS X (see Deployment Environment Setup - Your OS below)
++ From the Xampp Control Panel, Apache and MySQL must be running
++ MySQL databases are managed from phpMyAdmin
 
 ### Deployment Environment Setup - Windows
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
@@ -26,10 +28,10 @@ To track employee performance for companies with a large number of employees and
 + Note: Once the database is set up, there is really no need to use phpmyadmin - other than to use what is going on behind the scenes. If you are interested you can have a look, but it is not need beyond this point.
 
 ### Deployment Environment Setup - Linux
++ The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
++ Xampp can be installed in a short series of steps using the command line. For download instructions on Linux, see this [FAQ page](https://www.apachefriends.org/faq_linux.html "https://www.apachefriends.org/faq_linux.html") and click "How do I install XAMPP?" for the steps required.
 
-### Dependencies/SetUp
-2. The TaskHub webframe was tested on Xampp, an Apache server, v3.2.2. To download Xampp, go to this website and download: https://www.apachefriends.org/download.html or follow this tutorial video: https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2
+### Deployment Environment Setup - Mac OS X
++ The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
++ Xampp can be installed by following the short list of steps at this [FAQ page](https://www.apachefriends.org/faq_osx.html "https://www.apachefriends.org/faq_osx.html") by clicking "How do I do install XAMPP for Mac OS X?" and following the steps.
 
-3. From the Xampp Control Panel, Apache and MySQL must be running
- 
-4. MySQL databases are managed from phpMyAdmin
