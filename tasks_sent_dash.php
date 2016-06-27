@@ -364,7 +364,7 @@ else {
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
 
-              <h3 class="box-title">Active Task List</h3>
+              <h3 class="box-title">Active Sent Tasks</h3>
 
               <!--<div class="box-tools pull-right">
                 <ul class="pagination pagination-sm inline">
@@ -425,7 +425,7 @@ else {
           <div class="box box-primary">
             <div class="box-header">
               <i class="ion ion-clipboard"></i>
-              <h3 class="box-title">Task History</h3>
+              <h3 class="box-title">Completed Sent Tasks</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -434,7 +434,7 @@ else {
             if(1 != 0){
                $getManagerId=mysqli_query($con,"select id from users where '$user'=username");
                 $getManagerId=mysqli_fetch_array($getManagerId);
-                 $get_taskTable = "select * from InProgress where '$user_name' = manager";
+                 $get_taskTable = "select * from CompletedTasks where 'Sean Oneal' = manager";
 
                 $ManagerId=$getManagerId['id'];
 
