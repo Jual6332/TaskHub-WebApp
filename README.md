@@ -47,14 +47,26 @@ This repo includes a lot of code, and many different avenues are taken to create
       5. Part 4C: **TaskHub_Part_4Finish.pdf** provides an overview, and "looking back" view of our project to see what was contributed, what worked with our software process (Trello, GitHub, developing source, etc.) and what product we were able to create as a final product (Demo Video.)
       6. Part 5: **TBD**
       7. Part 6: **Not included - individual peer evals**
+      8. Other: project1.sql was a testing of our mysql database setup using queries
       
-+ **TaskHub Source**
-      1. Index.php - loads in the connection.php file from its directory (/includes), header.php, and eventually login.php
-      2. Connection.php - using SQL query, establishes a connection to the database through the localhost
-      3. Header.php - loads the homepage styling (html and css, mostly bootstrap with some scss and js for functionality), allows new users to create an account (calls insert_user.php), and allows returning users to log back in to see their tasks (login.html)
-      4. /img folder - holds images for the site
-      5. /fonts folder - keeps fonts and glyphicon symbols for site use
-      6. /css folder - included all bootstrap styling we need for the home page
-      7. /scss folder - includes style written in scss instead of css for the sign-up/login form
-      8. Login.php - when a user logins into their account, this file takes their email and password attempt and check them against the database. If the user has a correct email and password coombination, then the user is greeted with a "Successful Login" and sent to their dahboard page
++ **TaskHub Full Source**
+      1. **index.php** - loads in the connection.php file from its directory (/includes), header.php, and eventually login.php
+      2. **/includes/connection.php** - using SQL query, establishes a connection to the database through the localhost
+      3. **header.php** - loads the homepage styling (html and css, mostly bootstrap with some scss and js for functionality), allows new users to create an account (calls insert_user.php), and allows returning users to log back in to see their tasks (login.html)
+      4. **/img folder** - holds images for the site (homepage background, included in DISCLAIMERS readme)
+      5. **/fonts folder** - keeps fonts and glyphicon symbols for site use
+      6. **/font-awesome** - provides numerous font possibilites to use for the site, including use on the login page
+      7. **/css folder** - included all bootstrap styling we need for the home page
+      8. **/scss folder** - includes style written in scss instead of css for the sign-up/login form
+      9. **login.php** - when a user logins into their account, this file takes their email and password attempt and check them against the database. If the user has a correct email and password coombination, then the user is greeted with a "Successful Login" and sent to their dashboard page
+      10. **user_insert.php** - when a user signs up for an account, this file takes their login information and checks it against the database to make the sure the user hasn't already registered. If the user has already registered, then they are warned by this and asked to use another email. If the user has not already registered using that emailm then they are given a random employment key and their information is stored in the database. They are then redirected to home.php, which is the dashboard page for all users.
+      11. **home.php** - the dashboard home page for all users. From here, they can review their current tasks, review their task history and task grades, sent out enrollment keys to the employees beneath them if they have them, and then review the tasks they have sent out to their employees. This navigation can be done from the left sidebar, where a page exists for each feature. To review your current tasks and past tasks, go to "Dashboard" (home.php), to request enrollment to your supervisor, go to "Network" (network.php),  and to review tasks submitted by your employees, grade their tasks, or check tha status of their employees current tasks, go to the "Manager" tab (tasks_sent_dash.php.) Also, the home.php dashboard page makes use of many more folders and style sheets.
+      12. **/bootstrap folder** - includes separate bootstrap styling for the dashboard components, including the calendar, task module, and task labels.
+      13. **/dist folder** - includes images for default user images and javascript code which enables drop-down menu functionality and task reordering by the user.
+      14. **/pages folder** - includes html for the calendar and widget applications to the dashboard for future use, along with html for more advanced applications (mailing mechanism, automatic chat, etc.)
+      15. **/functions/function.php** - location for future function calls, and a redundant server connection
+      16. **/js folder** - jQuery and other javascript functions used along with bootstrap for site functionality
+      17. **/plugins folder** - a wide assortment of custom javascript and css, meant to be use for future projects
+      18. **/styles folder** - a folder with styling for specific tables and list items for the dashboard page
+
 
