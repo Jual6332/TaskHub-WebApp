@@ -30,6 +30,7 @@ To track employee performance for companies with a large number of employees and
 ### Deployment Environment Setup - Linux
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Xampp can be installed in a short series of steps using the command line. For download instructions on Linux, see this [FAQ page](https://www.apachefriends.org/faq_linux.html "https://www.apachefriends.org/faq_linux.html") and click "How do I install XAMPP?" for the steps required.
++ If you have problems suchs as a predefined password for user root there are two files you need to change include/connection.php and function/function.php-change the empy quotation marks to "\\whatever your passswordis"
 
 ### Deployment Environment Setup - Mac OS X
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
