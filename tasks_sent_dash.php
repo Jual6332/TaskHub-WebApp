@@ -385,8 +385,6 @@ else {
               $get_userID = mysqli_query($con,"select * from users where username ='$user'");
               $get_userID = mysqli_fetch_array($get_userID);
               $id = $get_userID['id'];
-
-
               $get_taskTable = "select * from InProgress where '$id' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
@@ -437,15 +435,12 @@ else {
             <!-- /.box-header -->
             <div class="box-body">
               <ul class="todo-list">
-
-                <form action="" method="post">
             <?php 
             if(1 != 0){
               $user=$_SESSION['user_email'];
               $get_userID = mysqli_query($con,"select * from users where username ='$user'");
               $get_userID = mysqli_fetch_array($get_userID);
               $id = $get_userID['id'];
-
               $get_taskTable = "select * from CompletedTasks where '$id' = manager";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
@@ -459,6 +454,8 @@ else {
               $taskDate = $taskTable['completed'];?>
                 
                  <li>
+
+                  <form action="" method="post">
                       <span class="handle">
                         <i class="fa fa-ellipsis-v"></i>
                         <i class="fa fa-ellipsis-v"></i>
@@ -469,7 +466,6 @@ else {
                   <small class="label label-success"><i class="fa fa-flag"></i>: <?php echo"$taskGrade"?></small>
                   <input type="hidden" value=<?php echo "$taskID"?> name="hid_in[]">
                   &nbsp; &nbsp;&nbsp; &nbsp;
-
                   <input style = "float: right;" type="text" value="" name="change_grade[]" placeholder="Change Grade (1-10)"/>
                   </li>
                   </form>
@@ -483,7 +479,6 @@ else {
                 <?php
                 }
                 ?>
-
               </ul>
             </div>
           </div>
