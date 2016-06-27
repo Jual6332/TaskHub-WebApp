@@ -24,7 +24,7 @@ To track employee performance for companies with a large number of employees and
 + Now create a database called taskhub, which we will use for this project. Download the sql file from our github: loadDB2.sql, and navigating back to phpmyadmin, select "Import" from the top toolbar and upload the SQL file. At this point, all tables will be loaded for testing via the SQL queries. Including are the users table where employees and managers login information is kept, the InProgress table which reflects the current tasks being worked on by employees, and the CompletedTasks table which reflects the taks that have been completed and have been graded by the managers.
 + Navigate back to the TasHub github repo, and download/clone the files
 + Here is where the distinction between Operating Systems comes in. We are going to move the project files into a different location. Navigate to your C-drive, and lick on the folder named "xampp." From here, click on htdocs. Now, unzip the project files folder if you haven't already, and place in the htdocs folder directory. From here, the localhost can be run on your machine.
-+ To test it out, run localhost/3308-project-master/, and you should see the welcome page for TaskHub with a sign-in form. Make sure to sign up, and then you will be redirected to your dashboard
++ **To test it out, run localhost/3308-project-master/**, and you should see the welcome page for TaskHub with a sign-in form. Make sure to sign up, and then you will be redirected to your dashboard
 + Note: Once the database is set up, there is really no need to use phpmyadmin - other than to use what is going on behind the scenes. If you are interested you can have a look, but it is not need beyond this point.
 
 ### Deployment Environment Setup - Linux
