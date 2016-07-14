@@ -8,7 +8,12 @@ A centralized system that comprehensively tracks employee performance through ta
 ### Motivation: 
 To track employee performance for companies with a large number of employees and optimizing task-tracking in the workplace
 
-### Deployment Environment Overview
+### Heroku Deployment
+<a href="https://heroku.com/deploy">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+
+### Local Deployment Environment Overview
 + TaskHub is run locally for now, but TaskHub.site will be coming soon! Make sure to be watching.
 + TaskHub utilizes the popular LAMP stack: Linux, Apache, MySQL, and PHP for software development
 + XAMPP was used to develop TaskHub, and is a free and open source cross-platform web server solution stack package developed by Apache Friends (they are super awesome and you should check them out)
@@ -16,7 +21,7 @@ To track employee performance for companies with a large number of employees and
 + From the Xampp Control Panel, Apache and MySQL must be running
 + MySQL databases are managed from phpMyAdmin
 
-### Deployment Environment Setup and Testing - Windows
+### Local Deployment Environment Setup and Testing - Windows
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Now that we have Xampp, open up the Xampp control panel (this might be located in your downloads, or you can search in your programs list)
 + From the Xampp Control Panel, make sure the Apache and MySQL modules are running by clicking the "Start" button under Actions for each. If the buttons immediately under Actions say "Stop", then they are already running and you don't have to change anything else
@@ -27,12 +32,12 @@ To track employee performance for companies with a large number of employees and
 + **To test it out, run localhost/3308-project-master/**, and you should see the welcome page for TaskHub with a sign-in form. Make sure to sign up, and then you will be redirected to your dashboard
 + Note: Once the database is set up, there is really no need to use phpmyadmin - other than to use what is going on behind the scenes. If you are interested you can have a look, but it is not need beyond this point.
 
-### Deployment Environment Setup - Linux
+### Local Deployment Environment Setup - Linux
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Xampp can be installed in a short series of steps using the command line. For download instructions on Linux, see this [FAQ page](https://www.apachefriends.org/faq_linux.html "https://www.apachefriends.org/faq_linux.html") and click "How do I install XAMPP?" for the steps required.
 + If you have problems suchs as a predefined password for user root there are two files you need to change include/connection.php and function/function.php-change the empy quotation marks to "\\whatever your passswordis"
 
-### Deployment Environment Setup - Mac OS X
+### Local Deployment Environment Setup - Mac OS X
 + The TaskHub webframe was tested on Xampp, v3.2.2. To download Xampp, go to this [website](https://www.apachefriends.org/download.html "ApacheFriends.org") and download Xampp or follow the first steps in this tutorial [video](https://www.youtube.com/watch?v=mBcLlsXdQMg&list=PL3oMl9a6mutni1eIv5yTmGYkofu0KwjZW&index=2 "Youtube Tutorial by OnlineTuts") 
 + Xampp can be installed by following the short list of steps at this [FAQ page](https://www.apachefriends.org/faq_osx.html "https://www.apachefriends.org/faq_osx.html") by clicking "How do I do install XAMPP for Mac OS X?" and following the steps.
 
