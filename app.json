@@ -1,7 +1,7 @@
 {
-  "name": "Node.js Sample",
-  "description": "A barebones Node.js app using Express 4",
-  "repository": "https://github.com/heroku/node-js-sample",
+  "name": "GitHub",
+  "description": "A responsive deployment of the software GitHub, built on the LAMP stack with Bootstrap front-end",
+  "repository": "https://github.com/Jual6332/3308-project",
   "logo": "http://women2.com/wp-content/uploads/2014/06/shutterstock_157775207.jpg",
   "keywords": ["node", "express", "static"]
 }
