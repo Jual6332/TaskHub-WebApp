@@ -9,9 +9,11 @@ A centralized system that comprehensively tracks employee performance through ta
 To track employee performance for companies with a large number of employees and optimizing task-tracking in the workplace
 
 ### Heroku Deployment
-<a href="https://heroku.com/deploy">
+<!--<a href="https://heroku.com/deploy">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
-</a>
+</a>-->
+
+Coming soon...
 
 ### Local Deployment Environment Overview
 + TaskHub is run locally for now, but TaskHub.site will be coming soon! Make sure to be watching.
