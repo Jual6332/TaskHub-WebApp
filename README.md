@@ -46,7 +46,7 @@ Coming soon...
 ### Repo Code Layout
 This repo includes a lot of code, and many different avenues are taken to create the TaskHub software what it is. Included are CSS style pages, custom Javascript code for site functionality, Bootstrap framework packages included to create sleek design, and sql queries which are used to manage databases. But the code can be broken down further. Here is a comprehensive breakdown of all code and files used in TaskHub.
 
-+ ####**CSCI 3308 Required Project Files**
++ #### **CSCI 3308 Required Project Files**
       1. Part 1: **ProjectPart1.pdf**
           provides a "look-ahead" approach to our project, including our project-tracking software (Trello), VCS (GitHub), and our project description.
       2. Part 2: **03-TaskHub_Part2.sql** is a MySQL dump of our first database tables. Provided a visual interpretation of how our database would function, and using phpMyAdmin, was detrimental in providing function for our project
@@ -57,7 +57,7 @@ This repo includes a lot of code, and many different avenues are taken to create
       7. Part 6: **Not included - individual peer evals**
       8. Other: **project1.sql was a testing of our mysql database setup using queries**
       
-+ ####**TaskHub Full Source**
++ #### **TaskHub Full Source**
       1. **index.php** - loads in the connection.php file from its directory (/includes), header.php, and eventually login.php
       2. **/includes/connection.php** - using SQL query, establishes a connection to the database through the localhost
       3. **/template/header.php** - loads the homepage styling (html and css, mostly bootstrap with some scss and js for functionality), allows new users to create an account (calls insert_user.php), and allows returning users to log back in to see their tasks (login.html)
