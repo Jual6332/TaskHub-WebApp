@@ -1,4 +1,4 @@
-# Web Application project for CSCI 3308 course (Software Engineering Methods and Tools)
+# Web Application project for CSCI 3308
 ### Project Title: TaskHub
 ### Project Team: Justin Alvey, Sean O'Neal, Brandon Spitler, and Lucy Wilkinson
 ### Project Description:
