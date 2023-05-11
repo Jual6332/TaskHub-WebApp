@@ -245,7 +245,7 @@ else {
 
         <?php
       echo "
-          <p>$user_name</p>
+          <p>$name</p>
       ";
         ?>
           <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
@@ -380,7 +380,7 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from InProgress where '$user_name' = workers";
+              $get_taskTable = "select * from InProgress where '$name' = workers";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
@@ -434,7 +434,7 @@ else {
               <ul class="todo-list">
             <?php 
             if($numTasks != 0){
-              $get_taskTable = "select * from CompletedTasks where '$user_name' = workers";
+              $get_taskTable = "select * from CompletedTasks where '$name' = workers";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
