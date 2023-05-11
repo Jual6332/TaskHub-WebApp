@@ -11,12 +11,14 @@ else {
           $get_user = "select * from users where username='$user'";
           $run_user = mysqli_query($con,$get_user);
           $row = mysqli_fetch_array($run_user);
-          $user_id = $row['id'];
-          $user_name = $row['name'];
+          //$user_id = $row['id'];
+          $first_name = $row['firstname'];
+          $last_name = $row['lastname'];
+          $full_name = $first_name . ' ' . $last_name;
           $user_email = $row['username'];
-          $user_key = $row['key'];
-          $requests = $row['emp_requests'];
-          $get_num = "select count(b.id) from users a, InProgress b where a.name = '$user_name' and a.name = b.workers";
+          $user_key = $row['password'];
+          //$requests = $row['emp_requests'];
+          $get_num = "select count(b.id) from users a, InProgress b where a.username = '$user_email' and a.firstname+a.lastname = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
             printf("Error: %s\n", mysqli_error($con));
@@ -24,7 +26,7 @@ else {
           }
           $num_retrieve = mysqli_fetch_array($run_num);
           $numTasks = $num_retrieve['count(b.id)'];
-          $get_avg = "select AVG(grade) from CompletedTasks where workers = '$user_name'";
+          $get_avg = "select AVG(grade) from CompletedTasks where workers = '$full_name'";
           $run_avg = mysqli_query($con,$get_avg);
           if (!$run_avg) {
             printf("Error: %s\n", mysqli_error($con));
