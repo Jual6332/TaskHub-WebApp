@@ -380,21 +380,22 @@ else {
             <div class="box-body">
               <ul class="todo-list">
             <?php 
-            if(1 != 0){
               $user=$_SESSION['user_email'];
-              $get_userID = mysqli_query($con,"select * from users where username ='$user'");
-              $get_userID = mysqli_fetch_array($get_userID);
-              $id = $get_userID['id'];
-              $get_taskTable = "select * from InProgress where '$id' = manager";
+              $get_user = mysqli_query($con,"select * from users where username ='$user'");
+              $get_user_array = mysqli_fetch_array($get_user);
+              $id = $get_user_array['id'];
+              $name = $get_user_array['name'];
+              $get_taskTable = "select * from InProgress where manager = '$name'";
               $run_taskTable = mysqli_query($con,$get_taskTable);
               if (!$run_taskTable) {
                 printf("Error: %s\n", mysqli_error($con));
                 exit();
               }
               while ($taskTable = mysqli_fetch_array($run_taskTable)) {
-              $taskD = $taskTable['description'];
-              $taskDiff = $taskTable['difficulty'];
-              $taskDate = $taskTable['due'];?>
+                $workers = $taskTable['workers'];
+                $taskD = $taskTable['description'];
+                $taskDiff = $taskTable['difficulty'];
+                $taskDate = $taskTable['due'];?>
 
                  <li>
                       <span class="handle">
@@ -402,18 +403,16 @@ else {
                         <i class="fa fa-ellipsis-v"></i>
                       </span>
                  <!-- <input type="checkbox" value="">-->
-                  <span class="text"><?php echo"$taskD"?></span>
-                  <style type="text/css">padding-left: 0px</style>
+                  <span class="text"><?php echo"$workers: $taskD"?></span>
+                  <style type="text/css">span {padding-left: 0px}</style>
                   <small class="label label-default"><i class="fa fa-flag"></i>Difficulty: <?php echo"$taskDiff"?></small>
                   <small class="label label-danger"><i class="fa fa-clock-o"></i>Due:<?php echo"  $taskDate"?></small>
                 </li>
                 <?php }
-                } else{
+                
                 ?>
-                  <h3>You have no active sent tasks.</h3>
-                <?php
-                }
-                ?>
+                <!--<h3>You have no active sent tasks.</h3>-->
+                
               </ul>
             </div>
             <!-- /.box-body -->
