@@ -67,16 +67,9 @@
                                   
                                     <div class="field-wrap">
                                       <label>
-                                        First Name<span class="req">*</span>
+                                        Full Name<span class="req">*</span>
                                       </label>
                                       <input type="text" required autocomplete="off" name="u_fname" />
-                                    </div>
-
-                                    <div class="field-wrap">
-                                      <label>
-                                        Last Name<span class="req">*</span>
-                                      </label>
-                                      <input type="text" required autocomplete="off" name="u_lname" />
                                     </div>
 
                                     <div class="field-wrap">
