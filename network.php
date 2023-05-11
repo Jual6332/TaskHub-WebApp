@@ -144,7 +144,9 @@ else {
 						$get_bos = "SELECT * FROM `users` WHERE `id`='$curBos'";
 						$run_bos = mysqli_query($con,$get_bos);
 						$row5 = mysqli_fetch_array($run_bos);
-						$currBosName = $row5['name'];
+						if (mysqli_num_rows($run_bos) > 0){
+							$currBosName = $row5['name'];
+						}
 					}else{
 						;
 					}
