@@ -12,13 +12,11 @@ else {
           $run_user = mysqli_query($con,$get_user);
           $row = mysqli_fetch_array($run_user);
           //$user_id = $row['id'];
-          $first_name = $row['firstname'];
-          $last_name = $row['lastname'];
-          $full_name = $first_name . ' ' . $last_name;
+          $name = $row['name'];
           $user_email = $row['username'];
           $user_key = $row['password'];
           //$requests = $row['emp_requests'];
-          $get_num = "select count(b.id) from users a, InProgress b where a.username = '$user_email' and a.firstname+a.lastname = b.workers";
+          $get_num = "select count(b.id) from users a, InProgress b where a.username = '$user_email' and a.name = b.workers";
           $run_num = mysqli_query($con,$get_num);
           if (!$run_num) {
             printf("Error: %s\n", mysqli_error($con));
@@ -26,7 +24,7 @@ else {
           }
           $num_retrieve = mysqli_fetch_array($run_num);
           $numTasks = $num_retrieve['count(b.id)'];
-          $get_avg = "select AVG(grade) from CompletedTasks where workers = '$full_name'";
+          $get_avg = "select AVG(grade) from CompletedTasks where workers = '$name'";
           $run_avg = mysqli_query($con,$get_avg);
           if (!$run_avg) {
             printf("Error: %s\n", mysqli_error($con));
@@ -203,7 +201,7 @@ else {
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Welcome, <?php echo "$user_name";?></span>
+              <span class="hidden-xs">Welcome, <?php echo "$name";?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
