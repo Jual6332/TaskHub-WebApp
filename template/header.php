@@ -67,24 +67,31 @@
                                   
                                     <div class="field-wrap">
                                       <label>
-                                        User Name<span class="req">*</span>
+                                        First Name<span class="req">*</span>
                                       </label>
-                                      <input type="text" required autocomplete="off" name="u_name" />
+                                      <input type="text" required autocomplete="off" name="u_fname" />
                                     </div>
 
-                                  <div class="field-wrap">
-                                    <label>
-                                      Email Address<span class="req">*</span>
-                                    </label>
-                                    <input type="email" required autocomplete="off" name="u_email"/>
-                                  </div>
+                                    <div class="field-wrap">
+                                      <label>
+                                        Last Name<span class="req">*</span>
+                                      </label>
+                                      <input type="text" required autocomplete="off" name="u_lname" />
+                                    </div>
+
+                                    <div class="field-wrap">
+                                      <label>
+                                        Email Address<span class="req">*</span>
+                                      </label>
+                                      <input type="email" required autocomplete="off" name="u_email"/>
+                                    </div>
                                   
-                                  <div class="field-wrap">
-                                    <label>
-                                      Set A Password<span class="req">*</span>
-                                    </label>
-                                    <input type="password" required autocomplete="off" name="u_pass"/>
-                                  </div>
+                                    <div class="field-wrap">
+                                      <label>
+                                        Set A Password<span class="req">*</span>
+                                      </label>
+                                      <input type="password" required autocomplete="off" name="u_pass"/>
+                                    </div>
                                   
                                   <button  name="sign_up" class="button button-block">Get Started</button>
                                   
